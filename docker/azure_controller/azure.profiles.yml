@@ -13,24 +13,95 @@ profiles:
         endpoints: 
           - http://localhost:5010
 
-  dv2:
+#Dv2 and Dv3 VMs
+  d2v2:
     variables:
       serverPort: 5000
-      serverAddress: 10.3.0.4
+      serverAddress: 172.27.1.5
+      cores: 2
+    jobs:
+      db:
+        endpoints:
+          - http://172.27.1.11:5010
+      application:
+        endpoints:
+          - http://172.27.1.5:5010
+        variables:
+          databaseServer: 172.27.1.11
+      load:
+        endpoints:
+          - http://172.27.1.9:5010
+          
+  d2v3:
+    variables:
+      serverPort: 5000
+      serverAddress: 172.27.1.6
+      cores: 2
+    jobs:
+      db:
+        endpoints:
+          - http://172.27.1.11:5010
+      application:
+        endpoints:
+          - http://172.27.1.6:5010
+        variables:
+          databaseServer: 172.27.1.11
+      load:
+        endpoints:
+          - http://172.27.1.9:5010
+  d3v2:
+    variables:
+      serverPort: 5000
+      serverAddress: 172.27.1.4
+      cores: 4
+    jobs:
+      db:
+        endpoints:
+          - http://172.27.1.11:5010
+      application:
+        endpoints:
+          - http://172.27.1.4:5010
+        variables:
+          databaseServer: 172.27.1.11
+      load:
+        endpoints:
+          - http://172.27.1.9:5010
+  d4v3:
+    variables:
+      serverPort: 5000
+      serverAddress: 172.27.1.7
+      cores: 4
+    jobs:
+      db:
+        endpoints:
+          - http://172.27.1.11:5010
+      application:
+        endpoints:
+          - http://172.27.1.7:5010
+        variables:
+          databaseServer: 172.27.1.11
+      load:
+        endpoints:
+          - http://172.27.1.9:5010
+  d8v3:
+    variables:
+      serverPort: 5000
+      serverAddress: 172.27.1.8
       cores: 8
     jobs:
       db:
         endpoints:
-          - http://10.3.0.7:5010
+          - http://172.27.1.11:5010
       application:
         endpoints:
-          - http://10.3.0.4:5010
+          - http://172.27.1.8:5010
         variables:
-          databaseServer: 10.3.0.7.106
+          databaseServer: 172.27.1.11
       load:
         endpoints:
-          - http://localhost:5010
+          - http://172.27.1.9:5010
 
+#Ds_v4 & Ds_v5 VMs
   d4sv4:
     variables:
       serverPort: 5000
