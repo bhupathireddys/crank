@@ -1,0 +1,37 @@
+imports:
+  - https://raw.githubusercontent.com/dotnet/crank/main/src/Microsoft.Crank.Jobs.Wrk/wrk.yml
+
+variables:
+  localEndpoint: http://localhost:5010
+
+jobs:
+  server:
+    source:
+      repository: https://github.com/TechEmpower/FrameworkBenchmarks
+      branchOrCommit: master
+      dockerFile: frameworks/Java/netty/netty.dockerfile
+      dockerImageName: netty
+      dockerContextDirectory: frameworks/Java/netty
+    port: 8080
+
+scenarios:
+  netty:
+    application:
+      job: server
+    load:
+      job: wrk
+      variables:
+        serverPort: 8080
+        path: /plaintext
+
+profiles:
+  local:
+    variables:
+      serverAddress: localhost
+    jobs: 
+      application:
+        endpoints: 
+          - "{{ localEndpoint }}"
+      load:
+        endpoints: 
+          - "{{ localEndpoint }}"

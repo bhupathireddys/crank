@@ -1,0 +1,5 @@
+<Project>
+  <PropertyGroup Label="Package Versions">
+    <JsonNetVersion>12.0.3</JsonNetVersion>
+  </PropertyGroup>
+</Project>

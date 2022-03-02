@@ -1,0 +1,37 @@
+<Project>
+  <!--
+    These are third party libraries that we use in this repo. We need to sign them even if they
+    are already signed. However, they must be signed with a 3rd party certificate.
+  -->
+  <ItemGroup>
+    <FileSignInfo Include="Fluid.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="Parlot.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="TimeZoneConverter.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="Irony.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="Manatee.Json.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="Newtonsoft.Json.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="YamlDotNet.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="Jint.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="Esprima.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="MessagePack.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="MessagePack.Annotations.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="Mono.Cecil.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="Mono.Cecil.Mdb.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="Mono.Cecil.Pdb.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="Mono.Cecil.Rocks.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="Octokit.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="Vanara.Core.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="Vanara.Core.resources.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="Vanara.PInvoke.Kernel32.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="Vanara.PInvoke.Shared.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="Serilog.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="Serilog.AspNetCore.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="Serilog.Extensions.Hosting.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="Serilog.Extensions.Logging.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="Serilog.Formatting.Compact.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="Serilog.Settings.Configuration.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="Serilog.Sinks.Console.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="Serilog.Sinks.Debug.dll" CertificateName="3PartySHA2" />
+    <FileSignInfo Include="Serilog.Sinks.File.dll" CertificateName="3PartySHA2" />
+  </ItemGroup>
+</Project>

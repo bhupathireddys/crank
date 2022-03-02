@@ -1,0 +1,19 @@
+results: # creates results from measurements
+
+- name: my/result
+  description: Custom result (s)
+  format: n2
+
+onResultsCreating:
+  - |
+    console.log("a default script")
+
+scripts:
+
+  # records the current date and time as a custom property
+  add_current_time: |
+    benchmarks.properties["time"] = new Date().toISOString();
+
+onResultsCreated:
+  - |
+    benchmarks.jobs.application.results["my/result"] = 123;

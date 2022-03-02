@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>Microsoft.Crank.IntegrationTests</AssemblyName>
+    <IsTestProject>true</IsTestProject>
+    <IsUnitTestProject>true</IsUnitTestProject>
+    <TestRunnerName>XUnit</TestRunnerName>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- We need the Agent to be built before the tests run -->
+    <ProjectReference Include="..\..\src\Microsoft.Crank.Agent\Microsoft.Crank.Agent.csproj" />
+    <ProjectReference Include="..\..\src\Microsoft.Crank.Controller\Microsoft.Crank.Controller.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="assets\**\*" CopyToOutputDirectory="PreserveNewest" />
+    <Compile Remove="assets\**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Hello Include="$(MSBuildProjectDirectory)\..\..\samples\hello\**\*" />
+    <Src Include="$(MSBuildProjectDirectory)\..\..\src\**\*" />
+  </ItemGroup>
+
+  <Target Name="CopyFiles" AfterTargets="BeforeBuild">
+    <Copy SourceFiles="@(Hello)" DestinationFiles="@(Hello->'$(OutputPath)hello\%(RecursiveDir)%(Filename)%(Extension)')" />
+    <Copy SourceFiles="@(Src)" DestinationFiles="@(Src->'$(OutputPath)src\%(RecursiveDir)%(Filename)%(Extension)')" />
+  </Target>
+
+</Project>

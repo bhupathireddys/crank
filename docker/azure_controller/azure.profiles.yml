@@ -1,0 +1,248 @@
+imports:
+  - https://github.com/aspnet/Benchmarks/blob/main/scenarios/packages.yml?raw=true
+
+profiles:
+  local:
+    variables:
+      serverAddress: localhost
+    jobs: 
+      application:
+        endpoints: 
+          - http://localhost:5010
+      load:
+        endpoints: 
+          - http://localhost:5010
+
+  dv2:
+    variables:
+      serverPort: 5000
+      serverAddress: 10.3.0.4
+      cores: 8
+    jobs:
+      db:
+        endpoints:
+          - http://10.3.0.7:5010
+      application:
+        endpoints:
+          - http://10.3.0.4:5010
+        variables:
+          databaseServer: 10.3.0.7.106
+      load:
+        endpoints:
+          - http://localhost:5010
+
+  d4sv4:
+    variables:
+      serverPort: 5000
+      serverAddress: 172.16.1.8
+      cores: 4
+    jobs:
+      db:
+        endpoints:
+          - http://172.16.1.7:5010
+      application:
+        endpoints:
+          - http://172.16.1.8:5010
+        variables:
+          databaseServer: 172.16.1.7
+      load:
+        endpoints:
+          - http://172.16.1.6:5010
+
+  d4sv5:
+    variables:
+      serverPort: 5000
+      serverAddress: 172.16.1.9
+      cores: 4
+    jobs:
+      db:
+        endpoints:
+          - http://172.16.1.7:5010
+      application:
+        endpoints:
+          - http://172.16.1.9:5010
+        variables:
+          databaseServer: 172.16.1.7
+      load:
+        endpoints:
+          - http://172.16.1.6:5010
+
+  d8sv4:
+    variables:
+      serverPort: 5000
+      serverAddress: 172.16.1.10
+      cores: 8
+    jobs:
+      db:
+        endpoints:
+          - http://172.16.1.7:5010
+      application:
+        endpoints:
+          - http://172.16.1.10:5010
+        variables:
+          databaseServer: 172.16.1.7
+      load:
+        endpoints:
+          - http://172.16.1.6:5010
+
+  d8sv5:
+    variables:
+      serverPort: 5000
+      serverAddress: 172.16.1.11
+      cores: 8
+    jobs:
+      db:
+        endpoints:
+          - http://172.16.1.7:5010
+      application:
+        endpoints:
+          - http://172.16.1.11:5010
+        variables:
+          databaseServer: 172.16.1.7
+      load:
+        endpoints:
+          - http://172.16.1.6:5010
+
+  d16sv4:
+    variables:
+      serverPort: 5000
+      serverAddress: 172.16.1.12
+      cores: 16
+    jobs:
+      db:
+        endpoints:
+          - http://172.16.1.7:5010
+      application:
+        endpoints:
+          - http://172.16.1.12:5010
+        variables:
+          databaseServer: 172.16.1.7
+      load:
+        endpoints:
+          - http://172.16.1.6:5010
+
+  d16sv5:
+    variables:
+      serverPort: 5000
+      serverAddress: 172.16.1.14
+      cores: 16
+    jobs:
+      db:
+        endpoints:
+          - http://172.16.1.7:5010
+      application:
+        endpoints:
+          - http://172.16.1.14:5010
+        variables:
+          databaseServer: 172.16.1.7
+      load:
+        endpoints:
+          - http://172.16.1.6:5010
+
+  d32sv4:
+    variables:
+      serverPort: 5000
+      serverAddress: 172.16.1.13
+      cores: 32
+    jobs:
+      db:
+        endpoints:
+          - http://172.16.1.7:5010
+      application:
+        endpoints:
+          - http://172.16.1.13:5010
+        variables:
+          databaseServer: 172.16.1.7
+      load:
+        endpoints:
+          - http://172.16.1.6:5010
+
+  d32sv5:
+    variables:
+      serverPort: 5000
+      serverAddress: 172.16.1.15
+      cores: 32
+    jobs:
+      db:
+        endpoints:
+          - http://172.16.1.7:5010
+      application:
+        endpoints:
+          - http://172.16.1.15:5010
+        variables:
+          databaseServer: 172.16.1.7
+      load:
+        endpoints:
+          - http://172.16.1.6:5010
+
+  d48sv4:
+    variables:
+      serverPort: 5000
+      serverAddress: 172.16.1.16
+      cores: 48
+    jobs:
+      db:
+        endpoints:
+          - http://172.16.1.7:5010
+      application:
+        endpoints:
+          - http://172.16.1.16:5010
+        variables:
+          databaseServer: 172.16.1.7
+      load:
+        endpoints:
+          - http://172.16.1.6:5010
+
+  d48sv5:
+    variables:
+      serverPort: 5000
+      serverAddress: 172.16.1.17
+      cores: 48
+    jobs:
+      db:
+        endpoints:
+          - http://172.16.1.7:5010
+      application:
+        endpoints:
+          - http://172.16.1.17:5010
+        variables:
+          databaseServer: 172.16.1.7
+      load:
+        endpoints:
+          - http://172.16.1.6:5010
+
+  d64sv4:
+    variables:
+      serverPort: 5000
+      serverAddress: 172.16.1.18
+      cores: 64
+    jobs:
+      db:
+        endpoints:
+          - http://172.16.1.7:5010
+      application:
+        endpoints:
+          - http://172.16.1.18:5010
+        variables:
+          databaseServer: 172.16.1.7
+      load:
+        endpoints:
+          - http://172.16.1.6:5010
+
+  d64sv5:
+    variables:
+      serverPort: 5000
+      serverAddress: 172.16.1.19
+      cores: 64
+    jobs:
+      db:
+        endpoints:
+          - http://172.16.1.7:5010
+      application:
+        endpoints:
+          - http://172.16.1.19:5010
+        variables:
+          databaseServer: 172.16.1.7
+      load:
+        endpoints:
+          - http://172.16.1.6:5010
