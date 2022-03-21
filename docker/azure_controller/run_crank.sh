@@ -6,7 +6,7 @@ jsonConfig=https://raw.githubusercontent.com/aspnet/Benchmarks/master/scenarios/
 databaseConfig=https://raw.githubusercontent.com/aspnet/Benchmarks/master/scenarios/database.benchmarks.yml
 serverProfiles=/app/azure.profiles.yml
 dataPath=/app/data/
-for host in d4sv4 d4sv5 d8sv4 d8sv5 d16sv4 d16sv5 d32sv4 d32sv5 d48sv4 d48sv5 d64sv4 d64sv5 
+for host in e4sv3 e4sv4 e4sv5 e8sv3 e8sv4 e8sv5 e16sv4 e16sv5 e32sv4 e32sv4 e48sv4 e48sv5 e64sv4 e64sv5 
 do
 for iter in 1 2 3
 do
