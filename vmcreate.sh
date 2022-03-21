@@ -7,7 +7,7 @@ adminpasswd="Password123!"
 image="Canonical:0001-com-ubuntu-server-focal:20_04-lts:latest"
 tags="Performance=Dotnet"
 mynsg="BSDotNet"
-size="Standard_D16s_v4"
+size="Standard_D8s_v4"
 
 for vm in d4sv4 d4sv5 d8sv4 d8sv5
 do
