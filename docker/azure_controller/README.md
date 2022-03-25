@@ -6,32 +6,18 @@ controller docker container.
 ## Crank + ASP.NET benchmarks + Docker container
 
 To run ASP.NET benchmarks using crank, depending on the test scenario, there need to be at least two or three machines, the load generator, the application server 
-(machine under test) and the database server. During the test, we need launch crank-agent on each one of these machines. Crank controller should be located together with test 
-config files. The final test results are also stored in controller side.
+(machine under test) and the database server. During the test, we need launch crank-agent on each one of these machines. Crank controller should be located together with test config files. The final test results are also stored in controller side.
 
 - The crank controller could be deployed seperately on a different machine. 
-
-  ![image](https://user-images.githubusercontent.com/48932302/154745176-c2aa4fcb-2ee6-43e6-bb20-eb37aafe1926.png) 
-  
-
-- Or, deploy controller on the load generator machine if this machine is powerful enough. 
-
-  ![image](https://user-images.githubusercontent.com/48932302/154744803-a569babd-5085-460e-87d8-0524018e069c.png)
-  
+ 
+![image](https://user-images.githubusercontent.com/23725779/160046833-d8da8667-fe56-41d2-98fc-8fd42d62b531.png)
 
 ## Test scenarios
 
 There are two files `run_crank.sh` and `azure.profiles.yml` in `crank/docker/azure_controller/` that contains seven test scenarios from [ASP.NET benchmark](https://github.com/aspnet/Benchmarks/tree/main/scenarios) and test machine information. At the execution time of the crank-controller docker container, the crank-agents will download required test benchmarks, build, and run the required tests.
 
-| Benchmarks| Scenarios | Note|
-|-----------|-----------|---|
-|Platform | json | |
-|Json| json||
-|Json| https||
-|Platform | plaintext |Require powerful loadgen|
-|Plaintext | plaintext |Require powerful loadgen|
-|Platform | fortunes |Require database server|
-|Database | fortunes |Require database server|
+![image](https://user-images.githubusercontent.com/23725779/160046898-3ad0067f-f716-43dc-a6ed-34bb96568d08.png)
+
 
 
 ## Notes for machines to use
