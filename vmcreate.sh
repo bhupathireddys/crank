@@ -1,15 +1,17 @@
-resourcegroup="bsdotnet"
+#!/bin/bash
+resourcegroup="workloads"
 location="eastus"
-vnet="BSDotNetvNet"
+vnet="workloads-vnet"
 subnet="subnet1"
-admin="admin"
+admin="sangabattula"
 adminpasswd="Password123!"
 image="Canonical:0001-com-ubuntu-server-focal:20_04-lts:latest"
-tags="Performance=Dotnet"
-mynsg="BSDotNet"
-size="Standard_D8s_v4"
+tags="Performance-Dotnet"
+mynsg="main-wl-ports"
+size="Standard_D4s_v5"
 
-for vm in d4sv4 d4sv5 d8sv4 d8sv5
+array=(loadgen 4appvm dbhost controller)
+for vm in "${array[@]}"
 do
 
 az vm create --resource-group $resourcegroup --name $vm --image $image --admin-username $admin --admin-password $adminpasswd --location $location --size $size --vnet-name $
