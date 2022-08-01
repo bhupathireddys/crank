@@ -1,0 +1,34 @@
+imports:
+  - https://github.com/aspnet/Benchmarks/blob/main/scenarios/packages.yml?raw=true
+
+profiles:
+  local:
+    variables:
+      serverAddress: localhost
+    jobs:
+      application:
+        endpoints:
+          - http://localhost:5010
+      load:
+        endpoints:
+          - http://localhost:5010
+
+#Dv2 and Dv3 VMs
+  4appvm:
+    variables:
+      serverPort: 5000
+      serverAddress: 172.19.1.5
+      cores: 4
+    jobs:
+      db:
+        endpoints:
+          - http://172.19.1.6:5010
+      application:
+        endpoints:
+          - http://172.19.1.5:5010
+        variables:
+          databaseServer: 172.19.1.6
+      load:
+        endpoints:
+          - http://172.19.1.4:5010
+
