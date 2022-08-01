@@ -17,10 +17,12 @@ dotnet tool install -g Microsoft.Crank.Controller --version "0.2.0-*"
 dotnet tool install -g Microsoft.Crank.Agent --version "0.2.0-*"
 
 cat << \EOF >> ~/.bashrc
-# Add .NET Core SDK tools
 export DOTNET_ROOT=$HOME/dotnet
 export PATH=$PATH:$HOME/dotnet
 export PATH="$PATH:/root/.dotnet/tools"
 EOF
 source ~/.bashrc
-echo " Dotnet and tools installed successfully"
+echo "                                                         "
+echo "****** Detailed Information ******"
+echo "                                                        "
+dotnet --info
