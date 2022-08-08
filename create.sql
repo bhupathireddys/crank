@@ -4,7 +4,7 @@ SET GLOBAL time_zone = '+00:00';
 
 # modified from SO answer http://stackoverflow.com/questions/5125096/for-loop-in-mysql
 CREATE DATABASE hello_world;
-USE hello_world;
+USE hello_world2;
 
 CREATE TABLE  world (
   id int(10) unsigned NOT NULL auto_increment,
@@ -14,7 +14,7 @@ CREATE TABLE  world (
 ENGINE=INNODB;
 CREATE USER 'benchmarkdbuser'@'%' IDENTIFIED WITH mysql_native_password BY 'benchmarkdbpass';
 CREATE USER 'benchmarkdbuser'@'localhost' IDENTIFIED WITH mysql_native_password BY 'benchmarkdbpass';
-GRANT SELECT, UPDATE ON hello_world.world TO 'benchmarkdbuser'@'%';
+GRANT ALL ON `hello_world`.* TO 'benchmarkdbuser'@'localhost';
 GRANT SELECT, UPDATE ON hello_world.world TO 'benchmarkdbuser'@'localhost';
 
 DELIMITER #
@@ -44,7 +44,6 @@ CREATE TABLE  fortune (
   PRIMARY KEY  (id)
 )
 ENGINE=INNODB;
-GRANT SELECT ON hello_world.fortune TO 'benchmarkdbuser'@'%';
 GRANT SELECT ON hello_world.fortune TO 'benchmarkdbuser'@'localhost';
 
 INSERT INTO fortune (message) VALUES ('fortune: No such file or directory');
@@ -59,4 +58,4 @@ INSERT INTO fortune (message) VALUES ('Feature: A bug with seniority.');
 INSERT INTO fortune (message) VALUES ('Computers make very fast, very accurate mistakes.');
 INSERT INTO fortune (message) VALUES ('<script>alert("This should not be displayed in a browser alert box.");</script>');
 INSERT INTO fortune (message) VALUES ('フレームワークのベンチマーク');
-                                                                                                                                 
+                                                                                                                            
