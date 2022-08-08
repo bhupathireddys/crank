@@ -4,7 +4,7 @@ SET GLOBAL time_zone = '+00:00';
 
 # modified from SO answer http://stackoverflow.com/questions/5125096/for-loop-in-mysql
 CREATE DATABASE hello_world;
-USE hello_world2;
+USE hello_world;
 
 CREATE TABLE  world (
   id int(10) unsigned NOT NULL auto_increment,
