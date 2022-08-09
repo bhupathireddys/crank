@@ -18,7 +18,6 @@ cp -R -p /var/log/mysql /ssd/log
 mkdir -p /var/run/mysqld
 
 chown -R mysql:mysql /var/lib/mysql /var/log/mysql /var/run/mysqld /ssd && \
-    mysqld & \
     until mysql -uroot -psecret -e "exit"; do sleep 1; done && \
     mysqladmin -uroot -psecret flush-hosts && \
     mysql -uroot -psecret < create.sql
